@@ -19,27 +19,29 @@ export default function Home({ info }) {
         <meta name="description" content={seo[0].descripcion} />
         <Favicon />
       </Head>
-      <Header />
-      <Article
-        title={principal.titulo}
-        image={principal.imagen.foto.formats.medium.url}
-        keywords={principal.imagen.palabrasClave}
-        content={principal.contenido}
-        main
-      />
-      {
-        articulos.map((articulo, id) => (
-          <Article
-            key={id}
-            title={articulo.titulo}
-            image={articulo.imagen.foto.formats.medium.url}
-            keywords={articulo.imagen.palabrasClave}
-            content={articulo.contenido}
-            last={id === articulos.length-1}
-          />
-        ))
-      }
-      <Footer />
+      <div className="text-lg">
+        <Header />
+        <Article
+          title={principal.titulo}
+          image={principal.imagen.foto.formats.medium.url}
+          keywords={principal.imagen.palabrasClave}
+          content={principal.contenido}
+          main
+        />
+        {
+          articulos.map((articulo, id) => (
+            <Article
+              key={id}
+              title={articulo.titulo}
+              image={articulo.imagen.foto.formats.medium.url}
+              keywords={articulo.imagen.palabrasClave}
+              content={articulo.contenido}
+              last={id === articulos.length - 1}
+            />
+          ))
+        }
+        <Footer />
+      </div>
     </>
   )
 }
