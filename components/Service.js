@@ -1,5 +1,5 @@
 import React from 'react'
-import { faCut, faTint, faDog, faDrumstickBite, faHome, faFirstAid, faCamera } from "@fortawesome/free-solid-svg-icons"
+import { faCut, faTint, faDog, faDrumstickBite, faHome, faFirstAid, faCamera, faTshirt } from "@fortawesome/free-solid-svg-icons"
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
@@ -12,7 +12,7 @@ function Service({ title, description, last, type, model }) {
     <article
       className={`pt-8 pb-16 flex flex-col
     ${model === "dorado" ? "text-yellow-500" : model === "oscuro" ? "text-black" : "text-blue-500"} mb-3 
-    ${last ? "" : "border-b border-black"}
+    ${last ? "" : "border-b border-gray-300"}
     `}>
       <FontAwesomeIcon className="text-8xl my-6 self-center" icon={models[type]} />
       <h2 className="px-3 pt-5 text-3xl font-bold">{title}</h2>
@@ -36,6 +36,7 @@ function getModels() {
     limpieza: faTint,
     paseo: faDog,
     comida: faDrumstickBite,
+    ropa: faTshirt,
     cuidado: faHome,
     salud: faFirstAid,
     fotos: faCamera

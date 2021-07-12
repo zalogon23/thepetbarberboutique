@@ -11,6 +11,10 @@ module.exports = {
       },
       colors: {
         blue: colors.cyan
+      },
+      fontFamily: {
+        // "right": ["Righteous", "cursive"],
+        "aclo": ["Aclonica", "sans-serif"]
       }
     },
   },

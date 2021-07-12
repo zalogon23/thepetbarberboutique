@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
 import Favicon from '../components/Favicon'
 import client from "../lib/client";
 import queries from "../lib/queries"
+import CustomHead from '../components/CustomHead';
 
 export default function Home({ info }) {
 
@@ -13,12 +13,12 @@ export default function Home({ info }) {
 
   return (
     <>
-      <Head>
+      <CustomHead>
         <title>{seo[0].nombrePagina}</title>
         <meta name="keywords" content={seo[0].palabrasClave} />
         <meta name="description" content={seo[0].descripcion} />
         <Favicon />
-      </Head>
+      </CustomHead>
       <div className="text-lg">
         <Header />
         <Article

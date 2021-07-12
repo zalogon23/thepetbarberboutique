@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Article from '../../components/Article';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header'
@@ -6,6 +5,7 @@ import Favicon from '../../components/Favicon'
 import client from "../../lib/client";
 import queries from "../../lib/queries"
 import Service from '../../components/Service';
+import CustomHead from '../../components/CustomHead';
 
 export default function Home({ info }) {
 
@@ -13,12 +13,12 @@ export default function Home({ info }) {
 
   return (
     <>
-      <Head>
+      <CustomHead>
         <title>{seo.nombrePagina}</title>
         <meta name="keywords" content={seo.palabrasClave} />
         <meta name="description" content={seo.descripcion} />
         <Favicon />
-      </Head>
+      </CustomHead>
       <Header />
       <Article
         title={principal.titulo}
