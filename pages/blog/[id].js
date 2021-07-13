@@ -5,49 +5,56 @@ import client from "../../lib/client";
 import queries from "../../lib/queries"
 import CustomHead from '../../components/CustomHead';
 import Article from '../../components/Article';
-import Link from 'next/link';
 
 export default function Home({ info }) {
 
-  const { blog, posts } = info;
-  const { seo, presentacion } = blog;
+  const { id, titulo, contenido } = info;
+  console.log(info)
 
   return (
     <>
       <CustomHead>
-        <title>{seo.nombrePagina}</title>
-        <meta name="keywords" content={seo.palabrasClave} />
-        <meta name="description" content={seo.descripcion} />
+        <title>{`The Pet Barber Shop | ${titulo}`}</title>
+        <meta name="keywords" content={titulo} />
+        <meta name="description" content={contenido.slice(0, 40)} />
         <Favicon />
       </CustomHead>
       <Header />
-      <Article title={presentacion.titulo} content={presentacion.contenido} />
-      {
-        posts.map((post, id) => {
-          console.log(post)
-          return <
-            Link href={`/blog/${post.id}`}>
-            <a>
-              <Article title={post.titulo} content={post.contenido} />
-            </a>
-          </Link>
-        })
-      }
+      <Article title={titulo} content={contenido} />
       <Footer />
     </>
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
 
-  const pageInfo = await client.query({
-    query: queries.blogPage
+  const { id } = params
+
+  const pages = await client.query({
+    query: queries.postsPage
   });
+
+  const pageInfo = pages.data.posts.find(post => post.id == id);
 
   return {
     props: {
-      info: pageInfo.data
+      info: pageInfo
     },
     revalidate: 1
   }
+}
+
+
+export async function getStaticPaths() {
+  const result = await client.query({
+    query: queries.postsIDs
+  });
+  const postsIDs = result.data.posts
+
+  return {
+    paths: [
+      ...postsIDs.map(res => ({ params: { id: res.id } }))
+    ],
+    fallback: false
+  };
 }
