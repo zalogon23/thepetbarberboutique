@@ -7,11 +7,11 @@ function Article({ title, image, keywords = "pet barber boutique perros mascota 
   const bottomBorder = last ? "" : "border-b border-gray-300"
 
   return (
-    <main className={`pb-5 ${bottomBorder} ${backgroundColor}`}>
+    <article className={`pb-5 ${bottomBorder} ${backgroundColor}`}>
       <h2 className={`${titleColor} py-12 px-3 text-4xl font-bold ${!image && "pb-4"}`}>{title}</h2>
       {image && <img src={image} alt={keywords} />}
       <div className={`px-3 py-5 ${paragraphColor}`} dangerouslySetInnerHTML={{__html: content}} />
-    </main>
+    </article>
   )
 }
 
