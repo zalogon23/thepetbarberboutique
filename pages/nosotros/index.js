@@ -3,13 +3,12 @@ import Header from '../../components/Header'
 import Favicon from '../../components/Favicon'
 import client from "../../lib/client";
 import queries from "../../lib/queries"
-import Card from '../../components/Card';
 import CustomHead from '../../components/CustomHead';
 import Article from '../../components/Article';
 
 export default function Home({ info }) {
 
-  const { seo, card: cards } = info;
+  const { seo, presentacion, logros } = info;
 
   return (
     <>
@@ -20,14 +19,25 @@ export default function Home({ info }) {
         <Favicon />
       </CustomHead>
       <Header />
-      <Article title="Contactanos" content="Podes comunicarte con nosotros por los siguientes medios:" />
+      <Article
+        title={presentacion.titulo}
+        image={presentacion.imagen.foto.formats.medium.url}
+        keywords={presentacion.imagen.palabrasClave}
+        content={presentacion.contenido}
+        alternative={presentacion.alternativo}
+        last
+      />
       {
-        cards.map((card, id) => <Card
+        logros.map((logro, id) => 
+        <Article
           key={id}
-          title={card.titulo}
-          color={card.color}
-          description={card.descripcion}
-          socialMedia={card.socialMedia} />)
+          title={logro.titulo}
+          image={logro.imagen.foto.formats.medium.url}
+          keywords={logro.imagen.palabrasClave}
+          content={logro.contenido}
+          last={id === logros.length - 1}
+          alternative={logro.alternativo}
+        />)
       }
       <Footer />
     </>
@@ -37,12 +47,12 @@ export default function Home({ info }) {
 export async function getStaticProps() {
 
   const pageInfo = await client.query({
-    query: queries.contactoPage
+    query: queries.nosotrosPage
   });
 
   return {
     props: {
-      info: pageInfo.data.contacto
+      info: pageInfo.data.nosotro
     },
     revalidate: 1
   }

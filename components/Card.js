@@ -4,14 +4,11 @@ import { faMailBulk, faPhone, faMobile, faFax, faMap, faSmoking } from "@fortawe
 
 import React from 'react'
 
-
-
 function Card({ title, socialMedia, description, color }) {
 
   const icon = getIcons(socialMedia)
   const colorSelected = getColors(color)
   const textColor = "text-gray-500"
-  console.log(description)
 
   return (
     <article className="flex flex-col px-2 pt-8 pb-16 border-b border-gray-300">

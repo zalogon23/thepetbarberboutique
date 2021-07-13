@@ -9,7 +9,6 @@ import CustomHead from '../components/CustomHead';
 export default function Home({ info }) {
 
   const { seo, principal, articulos } = info;
-  console.log(info)
 
   return (
     <>

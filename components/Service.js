@@ -8,7 +8,6 @@ import whatsapp from '../lib/whatsapp';
 const models = getModels();
 
 function Service({ title, description, last, type, model }) {
-  console.log(description)
   const textColor = "text-gray-500"
   return (
     <article

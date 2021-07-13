@@ -3,7 +3,7 @@ import React from 'react'
 function Article({ title, image, keywords = "pet barber boutique perros mascota corte", content, last, alternative }) {
   const paragraphColor = alternative ? "text-white" : "text-gray-500"
   const titleColor = alternative ? "text-white" : "text-blue-700"
-  const backgroundColor = alternative ? " bg-yellow-600 " : " bg-white"
+  const backgroundColor = alternative ? " bg-blue-800 " : " bg-white"
   const bottomBorder = last ? "" : "border-b border-gray-300"
 
   return (
