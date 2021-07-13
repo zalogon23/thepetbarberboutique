@@ -26,6 +26,7 @@ export default function Home({ info }) {
         keywords={principal?.imagen?.palabrasClave}
         content={principal.contenido}
         main
+        alternative={principal.alternativo}
       />
       <section>
         {

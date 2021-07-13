@@ -27,6 +27,7 @@ export default function Home({ info }) {
           keywords={principal.imagen.palabrasClave}
           content={principal.contenido}
           main
+          alternative={principal.alternativo}
         />
         {
           articulos.map((articulo, id) => (
@@ -37,6 +38,7 @@ export default function Home({ info }) {
               keywords={articulo.imagen.palabrasClave}
               content={articulo.contenido}
               last={id === articulos.length - 1}
+              alternative={articulo.alternativo}
             />
           ))
         }

@@ -8,6 +8,8 @@ import whatsapp from '../lib/whatsapp';
 const models = getModels();
 
 function Service({ title, description, last, type, model }) {
+  console.log(description)
+  const textColor = "text-gray-500"
   return (
     <article
       className={`pt-8 pb-16 flex flex-col
@@ -16,7 +18,7 @@ function Service({ title, description, last, type, model }) {
     `}>
       <FontAwesomeIcon className="text-8xl my-6 self-center" icon={models[type]} />
       <h2 className="px-3 pt-5 text-3xl font-bold">{title}</h2>
-      <p className="px-3 pt-5 pb-10 text-black">{description}</p>
+      <div className={`px-3 pt-5 pb-10 ${textColor}`} dangerouslySetInnerHTML={{ __html: description }} />
       <Link href={whatsapp.owner.askForService(type)}>
         <a className="self-center">
           <button className={`py-2 px-4 w-40 flex justify-between items-center rounded border hover:text-white
