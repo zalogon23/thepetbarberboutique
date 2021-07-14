@@ -5,11 +5,12 @@ import client from "../../lib/client";
 import queries from "../../lib/queries"
 import CustomHead from '../../components/CustomHead';
 import Article from '../../components/Article';
+import Share from '../../components/Share';
 
 export default function Home({ info }) {
 
   const { id, titulo, contenido } = info;
-  console.log(info)
+  const blogsURL = "https://the-pet-barber-boutique.herokuapp.com/blog/";
 
   return (
     <>
@@ -21,6 +22,7 @@ export default function Home({ info }) {
       </CustomHead>
       <Header />
       <Article title={titulo} content={contenido} />
+      <Share url={`${blogsURL}/${id}`} />
       <Footer />
     </>
   )

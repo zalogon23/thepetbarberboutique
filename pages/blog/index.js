@@ -30,7 +30,7 @@ export default function Home({ info }) {
             return (
               <Link key={id} href={`/blog/${post.id}`}>
                 <a>
-                  <PostCard title={post.titulo} content={post.contenido} /*image={post.imagen.foto.formats.medium.url} keywords={articulo.imagen.palabrasClave}*/ />
+                  <PostCard title={post.titulo} content={post.contenido} image={post.imagen?.foto.formats.medium.url} keywords={post.imagen?.palabrasClave} />
                 </a>
               </Link>
             )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PostCard({ title, content, image = "https://i.insider.com/5484d9d1eab8ea3017b17e29?width=600&format=jpeg&auto=webp", keywords = "perro" }) {
+function PostCard({ title, content, image, keywords }) {
   return (
     <article className="bg-blue-500 flex flex-col items-center shadow-xl pt-2 my-1">
       <h3 className="p-2 text-center text-2xl text-white font-bold">{title}</h3>
