@@ -10,6 +10,7 @@ import Share from '../../components/Share';
 export default function Home({ info }) {
 
   const { id, titulo, contenido } = info;
+  const imagen = info?.imagen;
   const blogsURL = "https://the-pet-barber-boutique.herokuapp.com/blog/";
 
   return (
@@ -21,7 +22,7 @@ export default function Home({ info }) {
         <Favicon />
       </CustomHead>
       <Header />
-      <Article title={titulo} content={contenido} />
+      <Article title={titulo} content={contenido} image={imagen?.foto.formats.medium.url} keywords={imagen.palabrasClave} />
       <Share url={`${blogsURL}/${id}`} />
       <Footer />
     </>

@@ -23,7 +23,7 @@ export default function Home({ info }) {
       </CustomHead>
       <Header />
       <Article title={presentacion.titulo} content={presentacion.contenido} />
-      <section className="grid grid-cols-1 p-2 pb-8 sm:grid-cols-2 sm:gap-2">
+      <section className="grid grid-cols-1 p-2 pb-8 sm:grid-cols-2 sm:gap-2 lg:grid-cols-3">
         {
           posts.map((post, id) => {
             console.log(post)
