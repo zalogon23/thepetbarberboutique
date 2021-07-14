@@ -28,7 +28,7 @@ export default function Home({ info }) {
         main
         alternative={principal.alternativo}
       />
-      <section>
+      <section className="grid grid-cols-1 sm:grid-cols-2 sm:gap-2 py-2 sm:px-2 lg:grid-cols-3">
         {
           servicios.map((servicio, id) => (
             <Service
