@@ -4,14 +4,14 @@ import { faMailBulk, faPhone, faMobile, faFax, faMap, faSmoking } from "@fortawe
 
 import React from 'react'
 
-function Card({ title, socialMedia, description, color }) {
+function Card({ title, socialMedia, description, color, last }) {
 
   const icon = getIcons(socialMedia)
   const colorSelected = getColors(color)
   const textColor = "text-gray-500"
 
   return (
-    <article className="flex flex-col px-2 pt-8 pb-16 border-b border-gray-300">
+    <article className={`flex flex-col px-2 pt-8 pb-16 ${!last && "border-b border-gray-300"} sm:border sm:border-gray-300  sm:px-4 sm:rounded`}>
       <FontAwesomeIcon className={`text-8xl ${colorSelected} self-center my-8`} icon={icon} />
       <h3 className="pb-3 text-3xl font-bold">{title}</h3>
       <div className={`py-2 ${textColor}`} dangerouslySetInnerHTML={{ __html: description }} />

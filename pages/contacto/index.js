@@ -21,14 +21,17 @@ export default function Home({ info }) {
       </CustomHead>
       <Header />
       <Article title="Contactanos" content="Podes comunicarte con nosotros por los siguientes medios:" />
-      {
-        cards.map((card, id) => <Card
-          key={id}
-          title={card.titulo}
-          color={card.color}
-          description={card.descripcion}
-          socialMedia={card.socialMedia} />)
-      }
+      <section className="grid grid-cols-1 sm:grid-cols-2 sm:gap-2 py-2 sm:px-2 lg:grid-cols-3">
+        {
+          cards.map((card, id) => <Card
+            key={id}
+            title={card.titulo}
+            color={card.color}
+            description={card.descripcion}
+            socialMedia={card.socialMedia}
+            last={id === cards.length - 1} />)
+        }
+      </section>
       <Footer />
     </>
   )

@@ -14,7 +14,7 @@ function Service({ title, description, last, type, model }) {
       className={`pt-8 pb-16 flex flex-col
     ${model === "dorado" ? "text-yellow-500" : model === "oscuro" ? "text-black" : "text-blue-500"} mb-3 
     ${last ? "" : "border-b border-gray-300"}
-    sm:border sm:border-gray-200 sm:rounded sm:px-4
+    sm:border sm:border-gray-300 sm:rounded sm:px-4
     `}>
       <FontAwesomeIcon className="text-8xl my-6 self-center" icon={models[type]} />
       <h2 className="px-3 pt-5 text-3xl font-bold">{title}</h2>
