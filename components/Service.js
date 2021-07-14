@@ -3,7 +3,7 @@ import { faCut, faTint, faDog, faDrumstickBite, faHome, faFirstAid, faCamera, fa
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
-import whatsapp from '../lib/whatsapp';
+import { whatsapp } from '../lib/socialMedia';
 
 const models = getModels();
 
