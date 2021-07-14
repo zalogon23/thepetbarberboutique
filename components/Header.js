@@ -21,7 +21,7 @@ function Header() {
         </div>
       </div>
       <nav className={`bg-blue-600 transition-height duration-150 overflow-hidden ${open ? "h-60" : "h-0"}`}>
-        <ul className={`w-full h-full flex flex-col justify-around py-3 px-5 transition-transform duration-500 transform ${open ? "translate-x-0 opacity-100" : "-translate-x-32 opacity-0"} text-xl font-bold text-white`}>
+        <ul className={`w-full h-full flex flex-col justify-around py-3 px-5 transition-transform duration-700 transform ${open ? "translate-x-0 opacity-100" : "-translate-x-32 opacity-0"} text-xl font-bold text-white`}>
           <li className="hover:text-blue-400"><Link href="/"><a>Inicio</a></Link></li>
           <li className="hover:text-blue-400"><Link href="/servicios"><a>Servicios</a></Link></li>
           <li className="hover:text-blue-400"><Link href="/contacto"><a>Contacto</a></Link></li>

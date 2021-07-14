@@ -21,7 +21,7 @@ function Footer() {
         <Link href={instagram}><a><FontAwesomeIcon className="mx-3" icon={faInstagram} /></a></Link>
         <Link href={whatsapp.owner.askForService("")}><a><FontAwesomeIcon className="mx-3" icon={faWhatsapp} /></a></Link>
       </div>
-      <div className="pb-2 md:text-2xl">Copyright © The Pet Shop Boutique</div>
+      <div className="pb-2 md:text-2xl">Copyright © The Pet Barber Boutique</div>
       <a className="cursor-pointer  md:text-2xl text-blue-300 hover:text-blue-200" href={whatsapp.developer.askForPage}>Sitio hecho por Virtualizar</a>
     </footer>
   )

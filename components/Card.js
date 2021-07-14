@@ -21,6 +21,7 @@ function Card({ title, socialMedia, description, color, last }) {
           <FontAwesomeIcon className={`text-8xl ${colorSelected} self-center my-8`} icon={icon} />
           <h3 className="pb-3 text-3xl font-bold">{title}</h3>
           <div className={`py-2 ${textColor} sm:h-32`} dangerouslySetInnerHTML={{ __html: description }} />
+          <button className="p-2 bg-blue-500 text-white text-xl font-bold">Visitar</button>
         </article>
       </a>
     </Link>
