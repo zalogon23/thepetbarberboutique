@@ -21,6 +21,12 @@ export default async function (req, res) {
       }
       throw new Error("The email/name created on the database doesn't match the ones received (maybe some problem on DB)")
     }
+
+    if (req.method === "GET") {
+      const emails = await Users.findAll({ attributes: ["name", "email"], raw: true })
+      res.status(200).json({ error: false, message: emails })
+    }
+
   } catch (err) {
     res.status(501).json({ error: true, message: "The was a general error at the endpoint '/users/suscribe': " + err.message })
     console.log("The was a general error at the endpoint '/users/suscribe': " + err.message)

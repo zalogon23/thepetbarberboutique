@@ -21,7 +21,7 @@ export default function Home({ info }) {
       <Header />
       <Article
         title={presentacion.titulo}
-        image={presentacion.imagen.foto.formats.medium.url}
+        formats={presentacion.imagen.foto.formats}
         keywords={presentacion.imagen.palabrasClave}
         content={presentacion.contenido}
         alternative={presentacion.alternativo}
@@ -32,7 +32,7 @@ export default function Home({ info }) {
         <Article
           key={id}
           title={logro.titulo}
-          image={logro.imagen.foto.formats.medium.url}
+          formats={logro.imagen.foto.formats}
           keywords={logro.imagen.palabrasClave}
           content={logro.contenido}
           last={id === logros.length - 1}

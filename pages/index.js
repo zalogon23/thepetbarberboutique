@@ -22,7 +22,7 @@ export default function Home({ info }) {
         <Header />
         <Article
           title={principal.titulo}
-          image={principal.imagen.foto.formats.medium.url}
+          formats={principal.imagen.foto.formats}
           keywords={principal.imagen.palabrasClave}
           content={principal.contenido}
           main
@@ -33,7 +33,7 @@ export default function Home({ info }) {
             <Article
               key={id}
               title={articulo.titulo}
-              image={articulo.imagen.foto.formats.medium.url}
+              formats={articulo.imagen.foto.formats}
               keywords={articulo.imagen.palabrasClave}
               content={articulo.contenido}
               last={id === articulos.length - 1}

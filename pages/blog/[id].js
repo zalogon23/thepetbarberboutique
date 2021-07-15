@@ -22,7 +22,7 @@ export default function Home({ info }) {
         <Favicon />
       </CustomHead>
       <Header />
-      <Article title={titulo} content={contenido} image={imagen?.foto.formats.medium.url} keywords={imagen.palabrasClave} />
+      <Article title={titulo} content={contenido} formats={imagen?.foto.formats} keywords={imagen.palabrasClave} />
       <Share url={`${blogsURL}/${id}`} />
       <Footer />
     </>

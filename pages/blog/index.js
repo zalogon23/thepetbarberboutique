@@ -22,15 +22,15 @@ export default function Home({ info }) {
         <Favicon />
       </CustomHead>
       <Header />
-      <Article title={presentacion.titulo} content={presentacion.contenido} />
-      <section className="grid grid-cols-1 p-2 pb-8 sm:grid-cols-2 sm:gap-2 lg:grid-cols-3">
+      <Article title={presentacion.titulo} content={presentacion.contenido} formats={presentacion.imagen.foto.formats} />
+      <section className="grid grid-cols-1 p-2 pb-8 sm:grid-cols-2 sm:gap-2 lg:grid-cols-3 xl:grid-cols-4">
         {
           posts.map((post, id) => {
             console.log(post)
             return (
               <Link key={id} href={`/blog/${post.id}`}>
                 <a>
-                  <PostCard title={post.titulo} content={post.contenido} image={post.imagen?.foto.formats.medium.url} keywords={post.imagen?.palabrasClave} />
+                  <PostCard title={post.titulo} content={post.contenido} formats={post.imagen?.foto.formats} keywords={post.imagen?.palabrasClave} />
                 </a>
               </Link>
             )

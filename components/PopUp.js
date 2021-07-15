@@ -16,7 +16,7 @@ function PopUp({ close }) {
         <FontAwesomeIcon onClick={close} className="absolute top-4 right-4 text-2xl hover:text-red-600 cursor-pointer" icon={faTimes} />
         <h2 className="text-2xl text-center font-black py-8">¡Ultimas promociones y descuentos!</h2>
         <p className="px-4 pb-4 text-gray-500">
-          Para estas al tanto de futuras ofertas, consejos, articulos y muchos mas
+          Para estar al tanto de futuras ofertas, consejos, articulos y muchos mas
         </p>
         <form className="flex flex-col items-center">
           <label className="text-xl w-full flex font-bold justify-between items-center pb-2">

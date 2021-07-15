@@ -4,11 +4,13 @@ import PopUp from '../components/PopUp'
 
 function MyApp({ Component, pageProps }) {
 
+  const timeBeforeShowingTheEmailPopUp = 10000;
+
   const [closed, setClosed] = useState(true)
   useEffect(() => {
     setTimeout(() => {
       setClosed(false)
-    }, 3000)
+    }, timeBeforeShowingTheEmailPopUp)
   }, [])
 
   return (

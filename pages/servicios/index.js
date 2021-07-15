@@ -22,7 +22,7 @@ export default function Home({ info }) {
       <Header />
       <Article
         title={principal.titulo}
-        image={principal?.imagen?.foto?.formats.medium.url}
+        formats={principal?.imagen?.foto?.formats}
         keywords={principal?.imagen?.palabrasClave}
         content={principal.contenido}
         main
