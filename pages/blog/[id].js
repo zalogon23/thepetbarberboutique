@@ -11,7 +11,7 @@ export default function Home({ info }) {
 
   const { id, titulo, contenido } = info;
   const imagen = info?.imagen;
-  const blogsURL = "https://the-pet-barber-boutique.herokuapp.com/blog/";
+  const blogsURL = "https://the-pet-barber-boutique.herokuapp.com/blog";
 
   return (
     <>
