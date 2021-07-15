@@ -8,9 +8,11 @@ function MyApp({ Component, pageProps }) {
 
   const [closed, setClosed] = useState(true)
   useEffect(() => {
-    setTimeout(() => {
-      setClosed(false)
-    }, timeBeforeShowingTheEmailPopUp)
+    if (!localStorage.getItem("sentEmail")) {
+      setTimeout(() => {
+        setClosed(false)
+      }, timeBeforeShowingTheEmailPopUp)
+    }
   }, [])
 
   return (

@@ -10,20 +10,20 @@ function PopUp({ close }) {
   const [email, setEmail] = useState("")
 
   return (
-    <section className="fixed top inset-0 p-4 flex justify-center items-center">
+    <section className="fixed top inset-0 flex justify-center items-center">
       <div className=" bg-black opacity-50 absolute inset-0"></div>
-      <div className="bg-white absolute py-12 px-2 mx-2 sm:px-12 rounded flex flex-col justify-center items-center">
+      <div className="bg-white absolute inset-2 sm:inset-6 py-12 px-2 sm:px-12 rounded flex flex-col justify-center items-center">
         <FontAwesomeIcon onClick={close} className="absolute top-4 right-4 text-2xl hover:text-red-600 cursor-pointer" icon={faTimes} />
         <h2 className="text-2xl text-center font-black py-8">¡Ultimas promociones y descuentos!</h2>
         <p className="px-4 pb-4 text-gray-500">
           Para estar al tanto de futuras ofertas, consejos, articulos y muchos mas
         </p>
         <form className="flex flex-col items-center">
-          <label className="text-xl w-full flex font-bold justify-between items-center pb-2">
+          <label className="text-lg w-full flex font-bold justify-between items-center pb-2">
             Tu nombre:
             <input placeholder="Juan" className="border w-8/12 py-1 px-3 rounded text-lg" type="text" value={name} onChange={e => setName(e.target.value)} />
           </label>
-          <label className="text-xl w-full flex font-bold justify-between items-center pb-8">
+          <label className="text-lg w-full flex font-bold justify-between items-center pb-8">
             Tu email:
             <input placeholder="ejemplo@gmail.com" className="border w-8/12 py-1 px-3 rounded text-lg" type="email" value={email} onChange={e => setEmail(e.target.value)} />
           </label>
@@ -48,6 +48,11 @@ function suscribe(e, close, name, email) {
     },
     body: JSON.stringify({ name: nameValid(name) ? name : "usuario", email })
   })
+    .then(result => {
+      if (!result.error) {
+        localStorage.setItem("sentEmail", true)
+      }
+    })
   close()
 }
 
