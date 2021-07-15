@@ -54,6 +54,6 @@ export async function getStaticProps() {
     props: {
       info: pageInfo.data.nosotro
     },
-    revalidate: 1
+    revalidate:  60 * 60 * 1
   }
 }

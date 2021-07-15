@@ -47,6 +47,6 @@ export async function getStaticProps() {
     props: {
       info: pageInfo.data.contacto
     },
-    revalidate: 1
+    revalidate: 60 * 60 * 1
   }
 }
