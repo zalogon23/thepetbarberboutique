@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Article({ title, formats, keywords = "pet barber boutique perros mascota corte", content, last, alternative }) {
+function Article({ title, formats, links, keywords = "pet barber boutique perros mascota corte", content, last, alternative }) {
   const paragraphColor = alternative ? "text-white" : "text-gray-500"
   const titleColor = alternative ? "text-white" : "text-blue-700"
   const backgroundColor = alternative ? " bg-blue-800 " : " bg-white"
   const bottomBorder = last ? "" : "border-b border-gray-300"
+  const buttonFeatures = alternative ? "bg-blue-800 text-white border-white hover:bg-white hover:text-blue-800" : "hover:bg-blue-800 hover:text-white border-blue-800 bg-white text-blue-800"
 
   return (
     <article className={`flex flex-col items-center overflow-hidden pb-12 break-words md:px-4 ${bottomBorder} ${backgroundColor}`}>
@@ -13,6 +14,16 @@ function Article({ title, formats, keywords = "pet barber boutique perros mascot
         {formats && <img className="md:rounded sm:max-w-lg md:max-w-xs lg:max-w-md w-full md:mt-3" src={formats.medium.url || formats.small.url} alt={keywords} />}
         <div className={`text-lg px-3 py-5 sm:max-w-lg sm:leading-10 sm:px-0 sm:text-xl md:text-2xl md:leading-10 md:pb-24 md:pt-0 md:max-w-xl md:px-12 lg:px-16 ${paragraphColor}`} dangerouslySetInnerHTML={{ __html: content }} />
       </div>
+      {
+        links &&
+        <div className="pt-12">
+          {
+            links.map(oneLink => (
+              <a className={`py-3 px-5 border ${buttonFeatures} rounded`} href={oneLink.url}>{oneLink.text}</a>
+            ))
+          }
+        </div>
+      }
     </article>
   )
 }

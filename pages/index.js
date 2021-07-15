@@ -27,6 +27,7 @@ export default function Home({ info }) {
           content={principal.contenido}
           main
           alternative={principal.alternativo}
+          links={principal.links}
         />
         {
           articulos.map((articulo, id) => (
@@ -38,6 +39,7 @@ export default function Home({ info }) {
               content={articulo.contenido}
               last={id === articulos.length - 1}
               alternative={articulo.alternativo}
+              links={articulo.links}
             />
           ))
         }
@@ -57,6 +59,6 @@ export async function getStaticProps() {
     props: {
       info: pageInfo.data.home
     },
-    revalidate: 60 * 60 * 1
+    revalidate: 1
   }
 }
