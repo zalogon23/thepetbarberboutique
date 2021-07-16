@@ -16,7 +16,7 @@ export default function Home({ info }) {
   return (
     <>
       <CustomHead>
-        <title>{`The Pet Barber Shop | ${titulo}`}</title>
+        <title>{`The Pet Barber Boutique | ${titulo}`}</title>
         <meta name="keywords" content={titulo} />
         <meta name="description" content={contenido.slice(0, 40)} />
         <Favicon />
