@@ -15,7 +15,7 @@ function Article({ title, formats, links, keywords = "pet barber boutique perros
         {/* {formats && <img className="md:rounded sm:max-w-lg md:max-w-xs lg:max-w-md w-full md:mt-3" src={formats.medium.url || formats.small.url} alt={keywords} />} */}
         <div style={{ lineHeight: "1.5em" }} className={`text-lg px-3 py-5 sm:max-w-lg sm:px-0 sm:text-xl md:text-2xl md:pb-16 md:pt-0 md:max-w-full md:px-12 lg:px-16 ${paragraphColor}`} dangerouslySetInnerHTML={{
           __html: /*content }} />*/
-            `<img class="md:rounded sm:max-w-lg md:max-w-xs md:float-left md:mr-8 lg:max-w-md w-full md:mt-3" src="${formats?.medium.url || formats?.small.url}" alt="${keywords}" /> ${content}`
+            `${formats && `<img class="md:rounded sm:max-w-lg md:max-w-xs md:float-left md:mr-8 lg:max-w-md w-full md:mt-3" src="${formats.medium.url || formats.small.url}" alt="${keywords}" />`} ${content}`
         }} />
       </div>
       {
