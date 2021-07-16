@@ -14,7 +14,7 @@ function Footer() {
             className="w-full lg:max-w-lg h-96 lg:mr-12 lg:rounded"
             loading="lazy"
             allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_KEY || "AIzaSyAVsTI76O2kf-TCyKmNnPymV3ZWHf-rUoc"}&q=Romulo+Naon+2730,+Buenos+Aires,+Argentina&zoom=16`}
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=Romulo+Naon+2730,+Buenos+Aires,+Argentina&zoom=16`}
             frameBorder="0" />
           <SocialSheet extra="hidden lg:flex" />
         </div>
