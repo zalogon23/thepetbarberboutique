@@ -29,7 +29,7 @@ function Footer() {
 function SocialSheet({ extra }) {
   return (
     <div className={`lg:flex-col pb-8 ${extra}`}>
-      <div className="px-8">
+      <div className="px-2 sm:px-8">
         <p className="break-words mb-4">
           <a href="https://www.google.com/maps?ll=-34.564046,-58.476798&z=16&t=m&hl=es-US&gl=US&mapclient=embed&q=Dr.+R%C3%B3mulo+Na%C3%B3n+2730+C1430+EQB+Buenos+Aires"><span className="text-xl font-bold text-blue-700">Dirección:</span> Dr. Romulo Naón 2730, Buenos Aires</a>
         </p>
