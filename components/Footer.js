@@ -11,7 +11,7 @@ function Footer() {
         <h3 className="text-lg py-12 font-aclo md:text-3xl md:py-24">¿Donde podes encontrarnos?</h3>
         <div className="flex w-full justify-center lg:pb-8">
           <iframe
-            className="w-full lg:max-w-lg h-96 lg:mr-12"
+            className="w-full lg:max-w-lg h-96 lg:mr-12 lg:rounded"
             loading="lazy"
             allowFullScreen
             src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_KEY || "AIzaSyAVsTI76O2kf-TCyKmNnPymV3ZWHf-rUoc"}&q=Romulo+Naon+2730,+Buenos+Aires,+Argentina&zoom=16`}
