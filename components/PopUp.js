@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import fetchJson from '../lib/fetchJson'
+import { useMutation } from "@apollo/client"
+import queries from '../lib/queries'
 
 function PopUp({ close }) {
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [addEmail, { data }] = useMutation(queries.addEmail)
+
+  useEffect(() => {
+    if (data?.createClient?.client.email) {
+      localStorage.setItem("sentEmail", true)
+      close()
+    }
+  }, [data])
 
   return (
     <section className="fixed top inset-0 flex justify-center items-center">
@@ -32,29 +41,21 @@ function PopUp({ close }) {
       </div>
     </section>
   )
-}
 
-function suscribe(e, close, name, email) {
-  e.preventDefault()
-  if (!emailValid(email)) {
-    close()
-    return
-  }
-  fetchJson("/api/users/suscribe", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify({ name: nameValid(name) ? name : "usuario", email })
-  })
-    .then(result => {
-      if (!result.error) {
-        localStorage.setItem("sentEmail", true)
+  function suscribe(e, close, name, email) {
+    e.preventDefault()
+    if (!emailValid(email)) {
+      close()
+      return
+    }
+    addEmail({
+      variables: {
+        nombre: nameValid(name) ? name : "usuario", email
       }
     })
-  close()
+  }
 }
+
 
 function nameValid(name) {
   return !!name.length

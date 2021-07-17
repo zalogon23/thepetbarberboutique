@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { ApolloProvider } from '@apollo/client';
 import 'tailwindcss/tailwind.css'
 import PopUp from '../components/PopUp'
+import client from '../lib/client';
 
 function MyApp({ Component, pageProps }) {
 
-  const timeBeforeShowingTheEmailPopUp = 10000;
+  const timeBeforeShowingTheEmailPopUp = 12000;
 
   const [closed, setClosed] = useState(true)
   useEffect(() => {
@@ -16,10 +18,10 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
+    <ApolloProvider client={client}>
       <Component {...pageProps} />
       {!closed && <PopUp close={() => setClosed(true)} />}
-    </>
+    </ApolloProvider>
   )
 }
 
