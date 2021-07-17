@@ -58,6 +58,6 @@ export async function getStaticPaths() {
     paths: [
       ...postsIDs.map(res => ({ params: { id: res.id } }))
     ],
-    fallback: true
+    fallback: "blocking"
   };
 }
